@@ -1,22 +1,21 @@
-癤�# AI Prompt Library
+# ?? AI Developer Starter Kit: 생산성 3배 가속화 툴킷
 
-A curated collection of reusable prompts for software development, documentation, career growth, and productivity.
+이 패키지는 개발자가 매일 반복하는 비효율적인 코드 작성, 설계, 디버깅 시간을 획기적으로 줄여주는 실전 프롬프트 모음집입니다.
 
-## Categories
+## ?? 구성품 (Total 3 Core Modules)
+- **React Component Generator**: 인터페이스 정의부터 Tailwind 스타일링까지 1분 컷.
+- **Express API Generator**: Zod 검증이 포함된 안전한 백엔드 API 설계.
+- **SQL Schema Generator**: 확장성과 성능을 고려한 데이터베이스 설계 도구.
 
-- Coding
-- Debugging
-- Planning
-- Documentation
-- Resume
-- Marketing
+## ? 이런 분께 추천합니다
+- 사이드 프로젝트를 빠르게 MVP 단계로 만들고 싶은 개발자
+- 반복되는 코드 패턴에서 벗어나 핵심 로직에 집중하고 싶은 분
+- AI 도구를 활용해 팀 내 개발 표준을 세우고 싶은 리드 개발자
 
-## Purpose
+## ?? 활용 방법
+1. 'Core/standard_pattern.md'의 가이드라인을 먼저 읽습니다.
+2. 각 모듈의 프롬프트를 복사하여 ChatGPT/Claude에 붙여넣습니다.
+3. 내 프로젝트에 맞춰 기술 스택만 살짝 수정하여 즉시 사용합니다.
 
-Save time by using high-quality prompts with ChatGPT and Gemini.
-
-## Future
-
-- 100+ prompts
-- AI workflow examples
-- Prompt engineering guide
+---
+*본 제품은 매달 새로운 프롬프트 팩이 추가되는 구독형 자산입니다.*
