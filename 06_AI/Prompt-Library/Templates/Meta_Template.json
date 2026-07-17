@@ -1,0 +1,8 @@
+{
+  "product_name": "[상품명 입력]",
+  "version": "1.0.0",
+  "category": "[분야]",
+  "target_audience": "[타겟]",
+  "tags": ["AI", "Developer", "Productivity"],
+  "price_tier": "Basic"
+}
