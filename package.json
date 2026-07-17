@@ -1,0 +1,24 @@
+{
+  "name": "survival-2026",
+  "version": "1.0.0",
+  "description": "**���� ���꼺 �ش�ȭ �� ������ �ڻ�ȭ ������Ʈ.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinyu1212/Survival-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kevinyu1212/Survival-2026/issues"
+  },
+  "homepage": "https://github.com/kevinyu1212/Survival-2026#readme",
+  "devDependencies": {
+    "prettier": "^3.9.5"
+  }
+}

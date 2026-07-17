@@ -1,5 +1,5 @@
-param([string]\, [string]\)
-\ = Get-Content "06_AI/Prompt-Library/Core/standard_pattern.md" -Raw
-\ = "06_AI/Prompt-Library/\/\.md"
-\ | Set-Content -Path \
-Write-Host "积己 肯丰: \"
+param([string]$Name, [string]$Category)
+$Template = Get-Content "06_AI/Prompt-Library/Core/standard_pattern.md" -Raw
+$Target = "06_AI/Prompt-Library/$Category/$Name.md"
+$Template | Set-Content -Path $Target
+Write-Host "积己 肯丰: $Target"
