@@ -1,0 +1,16 @@
+{
+  "name": "api-client-base",
+  "version": "1.0.0",
+  "description": "Base API client wrapper for Survival-2026",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  }
+}
