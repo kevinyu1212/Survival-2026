@@ -1,0 +1,21 @@
+{
+    "name":  "web-saas-ai",
+    "version":  "1.0.0",
+    "private":  true,
+    "main":  "dist/index.js",
+    "scripts":  {
+                    "clean":  "rimraf dist",
+                    "build":  "npm run clean \u0026\u0026 tsc",
+                    "start":  "node dist/index.js"
+                },
+    "dependencies":  {
+                         "auth-kit":  "*",
+                         "billing-kit":  "*",
+                         "ai-stream-core":  "*",
+                         "security-kit":  "*"
+                     },
+    "devDependencies":  {
+                            "typescript":  "^5.0.0",
+                            "rimraf":  "^5.0.0"
+                        }
+}
