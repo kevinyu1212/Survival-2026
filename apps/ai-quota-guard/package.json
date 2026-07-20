@@ -1,0 +1,11 @@
+﻿{
+  "name": "ai-quota-guard",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "dependencies": {
+    "cache-kit": "*",
+    "notification-kit": "*",
+    "billing-kit": "*",
+    "security-kit": "*"
+  }
+}
