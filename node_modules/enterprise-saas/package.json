@@ -1,0 +1,15 @@
+﻿{
+  "name": "enterprise-saas",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "logger-kit": "file:../../logger-kit",
+    "rate-limiter-kit": "file:../../rate-limiter-kit",
+    "auth-kit": "file:../../auth-kit",
+    "database-kit": "file:../../database-kit",
+    "security-kit": "file:../../security-kit",
+    "cache-kit": "file:../../cache-kit",
+    "notification-kit": "file:../../notification-kit",
+    "billing-kit": "file:../../billing-kit"
+  }
+}

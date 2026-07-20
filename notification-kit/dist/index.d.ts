@@ -1,11 +1,9 @@
 export interface NotificationOptions {
-    channel: 'email' | 'webhook' | 'in-app';
+    channel: string;
     recipient: string;
     message: string;
 }
-export declare function createNotificationManager(): {
-    send: (options: NotificationOptions) => Promise<{
-        success: boolean;
-        timestamp: string;
-    }>;
-};
+export interface NotificationManager {
+    send(options: NotificationOptions): Promise<boolean>;
+}
+export declare function createNotificationManager(): NotificationManager;

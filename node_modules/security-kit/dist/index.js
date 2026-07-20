@@ -1,16 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createSecurityManager = createSecurityManager;
-function createSecurityManager() {
-    return {
-        check: () => true,
-        audit: () => { },
-        auditEnvironment: (env) => {
-            return {
-                isValid: true,
-                passed: true,
-                checkedKeys: Object.keys(env)
-            };
-        }
-    };
+exports.auditEnvironment = auditEnvironment;
+function auditEnvironment(env) {
+    if (!env.NODE_ENV || !env.API_SECRET) {
+        return false;
+    }
+    return env.API_SECRET.length > 5;
 }

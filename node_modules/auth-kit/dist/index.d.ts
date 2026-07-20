@@ -1,20 +1,7 @@
 export interface UserSession {
     userId: string;
     email: string;
-    role: 'free' | 'pro' | 'admin';
-    credits: number;
+    role: "FREE" | "PRO" | "ADMIN";
 }
-export interface AuthConfig {
-    provider: 'supabase' | 'authjs' | 'clerk';
-    apiKey?: string;
-}
-export declare class AuthManager {
-    private config;
-    private currentSession;
-    constructor(config: AuthConfig);
-    setSession(session: UserSession): void;
-    getSession(): UserSession | null;
-    isAuthenticated(): boolean;
-    isProUser(): boolean;
-}
-export declare function createAuthManager(config: AuthConfig): AuthManager;
+export declare function verifyMockToken(token: string): UserSession | null;
+export declare function authorizeRole(userRole: string, requiredRole: "FREE" | "PRO" | "ADMIN"): boolean;

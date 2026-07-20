@@ -4,20 +4,19 @@ exports.createCacheManager = createCacheManager;
 function createCacheManager() {
     const store = new Map();
     return {
-        set: (key, value, ttlSeconds = 60) => {
-            const expiry = Date.now() + ttlSeconds * 1000;
-            store.set(key, { value, expiry });
-        },
-        get: (key) => {
+        get(key) {
             const item = store.get(key);
             if (!item)
-                return null;
+                return undefined;
             if (Date.now() > item.expiry) {
                 store.delete(key);
-                return null;
+                return undefined;
             }
             return item.value;
         },
-        clear: () => store.clear()
+        set(key, value, ttlSeconds = 60) {
+            const expiry = Date.now() + ttlSeconds * 1000;
+            store.set(key, { value, expiry });
+        }
     };
 }

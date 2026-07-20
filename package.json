@@ -1,24 +1,19 @@
 {
-    "name":  "survival-2026-code-library",
-    "version":  "1.0.0",
-    "private":  true,
-    "workspaces":  [
-                       "survival-kit-core",
-                       "react-hook-kit",
-                       "api-client-base",
-                       "style-preset",
-                       "auth-kit",
-                       "billing-kit",
-                       "ai-stream-core",
-                       "apps/web-saas-ai",
-                       "packages/security-kit"
-                   ],
-    "scripts":  {
-                    "clean:all":  "npm run clean --ws --if-present",
-                    "build:all":  "npm run build --ws"
-                },
-    "devDependencies":  {
-                            "rimraf":  "^5.0.0",
-                            "typescript":  "^5.0.0"
-                        }
+  "name": "code-library-monorepo",
+  "private": true,
+  "workspaces": [
+    "logger-kit",
+    "rate-limiter-kit",
+    "auth-kit",
+    "database-kit",
+    "security-kit",
+    "cache-kit",
+    "notification-kit",
+    "billing-kit",
+    "apps/enterprise-saas"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
 }

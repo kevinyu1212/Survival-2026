@@ -3,12 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createNotificationManager = createNotificationManager;
 function createNotificationManager() {
     return {
-        send: async (options) => {
-            console.log(`[Notification-Kit] Sending ${options.channel.toUpperCase()} to ${options.recipient}: "${options.message}"`);
-            return {
-                success: true,
-                timestamp: new Date().toISOString()
-            };
+        async send(options) {
+            console.log(`[Notification Sent via ${options.channel.toUpperCase()}] To: ${options.recipient} - Message: ${options.message}`);
+            return true;
         }
     };
 }

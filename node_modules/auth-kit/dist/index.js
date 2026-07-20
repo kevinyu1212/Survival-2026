@@ -1,27 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthManager = void 0;
-exports.createAuthManager = createAuthManager;
-class AuthManager {
-    config;
-    currentSession = null;
-    constructor(config) {
-        this.config = config;
+exports.verifyMockToken = verifyMockToken;
+exports.authorizeRole = authorizeRole;
+function verifyMockToken(token) {
+    // 실무에서는 JWT 검증 로직이 들어갈 자리 (여기서는 모의 토큰 파싱)
+    if (token === "bearer-pro-token") {
+        return { userId: "u_001", email: "pro_user@survival.com", role: "PRO" };
     }
-    setSession(session) {
-        this.currentSession = session;
+    else if (token === "bearer-free-token") {
+        return { userId: "u_002", email: "free_user@survival.com", role: "FREE" };
     }
-    getSession() {
-        return this.currentSession;
-    }
-    isAuthenticated() {
-        return this.currentSession !== null;
-    }
-    isProUser() {
-        return this.currentSession?.role === 'pro' || this.currentSession?.role === 'admin';
-    }
+    return null;
 }
-exports.AuthManager = AuthManager;
-function createAuthManager(config) {
-    return new AuthManager(config);
+function authorizeRole(userRole, requiredRole) {
+    const hierarchy = { FREE: 1, PRO: 2, ADMIN: 3 };
+    return (hierarchy[userRole] || 0) >= (hierarchy[requiredRole] || 0);
 }

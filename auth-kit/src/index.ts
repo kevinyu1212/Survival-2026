@@ -1,40 +1,20 @@
-export interface UserSession {
+﻿export interface UserSession {
   userId: string;
   email: string;
-  role: 'free' | 'pro' | 'admin';
-  credits: number;
+  role: "FREE" | "PRO" | "ADMIN";
 }
 
-export interface AuthConfig {
-  provider: 'supabase' | 'authjs' | 'clerk';
-  apiKey?: string;
+export function verifyMockToken(token: string): UserSession | null {
+  // 실무에서는 JWT 검증 로직이 들어갈 자리 (여기서는 모의 토큰 파싱)
+  if (token === "bearer-pro-token") {
+    return { userId: "u_001", email: "pro_user@survival.com", role: "PRO" };
+  } else if (token === "bearer-free-token") {
+    return { userId: "u_002", email: "free_user@survival.com", role: "FREE" };
+  }
+  return null;
 }
 
-export class AuthManager {
-  private config: AuthConfig;
-  private currentSession: UserSession | null = null;
-
-  constructor(config: AuthConfig) {
-    this.config = config;
-  }
-
-  public setSession(session: UserSession): void {
-    this.currentSession = session;
-  }
-
-  public getSession(): UserSession | null {
-    return this.currentSession;
-  }
-
-  public isAuthenticated(): boolean {
-    return this.currentSession !== null;
-  }
-
-  public isProUser(): boolean {
-    return this.currentSession?.role === 'pro' || this.currentSession?.role === 'admin';
-  }
-}
-
-export function createAuthManager(config: AuthConfig): AuthManager {
-  return new AuthManager(config);
+export function authorizeRole(userRole: string, requiredRole: "FREE" | "PRO" | "ADMIN"): boolean {
+  const hierarchy = { FREE: 1, PRO: 2, ADMIN: 3 };
+  return (hierarchy[userRole as keyof typeof hierarchy] || 0) >= (hierarchy[requiredRole] || 0);
 }
